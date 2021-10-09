@@ -210,7 +210,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#provinsi').change(function() {
-                var id = $(this).val();
+                let id = $(this).val();
                 // console.log(id)
                 $.ajax({
                     url: "<?php echo base_url('artis/tampil_kabkota');?>/" + id,
@@ -229,7 +229,7 @@
                             html += '<option value="' + data[i].id + '">' + data[i].nama + '</option>';
                         }
                         
-                        console.log(html)
+                        // console.log(html)
                         $('#kabkota').html(html);
                         $('#kabkota').selectpicker('refresh');
                         // document.getElementsById("kabkota").innerHTML = html;
@@ -240,7 +240,7 @@
             
             $('#kabkota').change(function() {
                 var id_kabkota = $(this).val();
-                console.log(id_kabkota)
+                // console.log(id_kabkota)
                 $.ajax({
                     url: "<?php echo base_url('artis/tampil_kecamatan');?>/" + id_kabkota,
                     type: "POST",
@@ -249,7 +249,7 @@
                     },
                     dataType: 'json',
                     success: function(data) {
-                        console.log(data)
+                        // console.log(data)
 
                         var html = '';
                         // var html = '<select id="kecamatan" name="kecamatan" class="selectpicker" data-live-search="true" data-style="btn-default btn-custom" required>';
@@ -260,7 +260,7 @@
                         }
                         
                         // html += '</select>'
-                        console.log(html)
+                        // console.log(html)
                         $('#kecamatan').html(html);
                         $('#kecamatan').selectpicker('refresh');
                         // document.getElementsById("kabkota").innerHTML = html;
